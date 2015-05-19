@@ -1,0 +1,19 @@
+{
+	"id": "nexternal-auth",
+	"name": "In-house authorisation system",
+	"description": "This is our implementation of oAuth2 style authentication",
+	"url": "https://github.com/julianlam/nodebb-plugin-write-api",
+	"library": "./index.js",
+	"templates": "templates",
+	"hooks": [
+		{ "hook": "static:app.load", "method": "init" },
+		{ "hook": "filter:admin.header.build", "method": "addMenuItem" },
+		{ "hook": "action:middleware.authenticate", "method": "authenticate"}
+	],
+	"less": [
+		"./less/style.less"
+	],
+	"scripts": [
+		"public/js/admin.js"
+	]
+}
